@@ -12,6 +12,7 @@ class User(db.Model):
     # Establish the relationship with the Parent model
     parent = db.relationship('Parent', back_populates='user')
     teacher = db.relationship('Teacher', back_populates='user', uselist=False)  # Add this line
+    admin = db.relationship('Admin', back_populates='user', uselist=False)
     #student = db.relationship('Student', back_populates='user', uselist=False)  # Add this line
 
     #communication_sent = db.relationship('Communication', back_populates='sender', foreign_keys='Communication.sender_id', lazy='dynamic')
