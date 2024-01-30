@@ -23,6 +23,7 @@ def create_app():
     from app.routes.payment_routes import payment_bp
     from app.routes.teacher_routes import teacher_bp
     from app.routes.admin_routes import admin_bp
+    from app.routes.subject_routes import subject_bp
 
     app.register_blueprint(user_bp)
     app.register_blueprint(communication_bp)
@@ -31,6 +32,7 @@ def create_app():
     app.register_blueprint(tuition_fee_bp)
     app.register_blueprint(payment_bp)
     app.register_blueprint(teacher_bp)
-    app.register_blueprint(admin_bp) 
+    app.register_blueprint(admin_bp)
+    app.register_blueprint(subject_bp) 
 
     return app
