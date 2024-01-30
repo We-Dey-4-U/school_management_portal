@@ -21,12 +21,14 @@ def create_app():
     from app.routes.student_routes import student_bp
     from app.routes.tuition_fee_routes import tuition_fee_bp
     from app.routes.payment_routes import payment_bp
+    from app.routes.teacher_routes import teacher_bp
 
     app.register_blueprint(user_bp)
     app.register_blueprint(communication_bp)
     app.register_blueprint(parent_bp)  # Register parent_bp
     app.register_blueprint(student_bp)
     app.register_blueprint(tuition_fee_bp)
-    app.register_blueprint(payment_bp) 
+    app.register_blueprint(payment_bp)
+    app.register_blueprint(teacher_bp) 
 
     return app
