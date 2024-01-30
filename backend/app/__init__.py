@@ -24,6 +24,7 @@ def create_app():
     from app.routes.teacher_routes import teacher_bp
     from app.routes.admin_routes import admin_bp
     from app.routes.subject_routes import subject_bp
+    from app.routes.class_routes import class_bp
 
     app.register_blueprint(user_bp)
     app.register_blueprint(communication_bp)
@@ -33,6 +34,7 @@ def create_app():
     app.register_blueprint(payment_bp)
     app.register_blueprint(teacher_bp)
     app.register_blueprint(admin_bp)
-    app.register_blueprint(subject_bp) 
+    app.register_blueprint(subject_bp)
+    app.register_blueprint(class_bp) 
 
     return app

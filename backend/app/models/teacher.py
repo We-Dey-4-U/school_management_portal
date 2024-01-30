@@ -1,6 +1,8 @@
 # backend/app/models/teacher.py
 from app import db
 from app.models.user import User  # Import the User model
+from sqlalchemy.orm import relationship
+from sqlalchemy import ForeignKey
 
 class Teacher(db.Model):
     __tablename__ = 'Teacher'
@@ -15,6 +17,7 @@ class Teacher(db.Model):
 
     # Establish the relationship with the User model
     user = db.relationship('User', back_populates='teacher')
+    classes_taught = db.relationship('Classes', back_populates='teacher')
 
     def __repr__(self):
         return f'<Teacher {self.teacher_id}>'
