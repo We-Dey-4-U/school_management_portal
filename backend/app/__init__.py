@@ -3,6 +3,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
+from flask_cors import CORS
 
 db = SQLAlchemy()
 
@@ -13,6 +14,8 @@ def create_app():
     # Initialize extensions
     db.init_app(app)
     migrate = Migrate(app, db)
+
+    CORS(app)
 
     # Import and register blueprints
     from app.routes.user_routes import user_bp
@@ -25,6 +28,8 @@ def create_app():
     from app.routes.admin_routes import admin_bp
     from app.routes.subject_routes import subject_bp
     from app.routes.class_routes import class_bp
+    from app.routes.teacher_subject_routes import teacher_subject_bp
+    from app.routes.exam_routes import exam_bp
 
     app.register_blueprint(user_bp)
     app.register_blueprint(communication_bp)
@@ -35,6 +40,8 @@ def create_app():
     app.register_blueprint(teacher_bp)
     app.register_blueprint(admin_bp)
     app.register_blueprint(subject_bp)
-    app.register_blueprint(class_bp) 
+    app.register_blueprint(class_bp)
+    app.register_blueprint(teacher_subject_bp)
+    app.register_blueprint(exam_bp) 
 
     return app

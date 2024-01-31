@@ -1,0 +1,15 @@
+classes-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .class-item {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    list-style: none;
+  }
+  
+  .class-actions button {
+    margin-right: 5px;
+  }

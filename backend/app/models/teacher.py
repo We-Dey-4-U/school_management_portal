@@ -18,6 +18,7 @@ class Teacher(db.Model):
     # Establish the relationship with the User model
     user = db.relationship('User', back_populates='teacher')
     classes_taught = db.relationship('Classes', back_populates='teacher')
+    teacher_subjects = relationship('TeacherSubjects', back_populates='teacher')
 
     def __repr__(self):
         return f'<Teacher {self.teacher_id}>'
