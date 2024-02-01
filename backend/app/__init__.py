@@ -30,6 +30,7 @@ def create_app():
     from app.routes.class_routes import class_bp
     from app.routes.teacher_subject_routes import teacher_subject_bp
     from app.routes.exam_routes import exam_bp
+    from app.routes.grades_routes import grade_bp
 
     app.register_blueprint(user_bp)
     app.register_blueprint(communication_bp)
@@ -43,5 +44,6 @@ def create_app():
     app.register_blueprint(class_bp)
     app.register_blueprint(teacher_subject_bp)
     app.register_blueprint(exam_bp) 
+    app.register_blueprint(grade_bp)
 
     return app

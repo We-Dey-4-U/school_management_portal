@@ -18,5 +18,6 @@ class Classes(db.Model):
     teacher = db.relationship('Teacher', back_populates='classes_taught')
     subject = db.relationship('Subject', back_populates='classes_associated')
     exams_associated = relationship('Exams', back_populates='classes_instance')
+    grades = db.relationship('Grades', back_populates='class_instance')
     def __repr__(self):
         return f"<Classes {self.class_id}>"

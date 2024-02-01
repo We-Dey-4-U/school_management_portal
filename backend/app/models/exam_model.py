@@ -4,7 +4,7 @@ from sqlalchemy.orm import relationship
 
 # Define the Exams model
 class Exams(db.Model):
-    __tablename__ = 'exams'
+    __tablename__ = 'Exams'
 
     # Columns for Exams table
     exam_id = db.Column(db.Integer, primary_key=True)
@@ -16,6 +16,7 @@ class Exams(db.Model):
     # Define relationships with consistent back_populates
     subject = db.relationship('Subject', back_populates='exams_associated')
     classes_instance = db.relationship('Classes', back_populates='exams_associated')
+    grades = db.relationship('Grades', back_populates='exam', primaryjoin="Exams.exam_id == Grades.exam_id")
 
     def serialize(self):
         return {

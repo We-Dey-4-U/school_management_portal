@@ -21,3 +21,4 @@ class Student(db.Model):
     parent = db.relationship('Parent', back_populates='students')  # Adjust the backref name here
     tuition_fees = db.relationship('TuitionFee', back_populates='student', lazy='dynamic')
     payments = db.relationship('Payment', back_populates='student', lazy='dynamic')
+    grades = db.relationship('Grades', back_populates='student')

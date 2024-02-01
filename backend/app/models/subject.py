@@ -12,6 +12,7 @@ class Subject(db.Model):
     classes_associated = relationship('Classes', back_populates='subject')
     teacher_subjects = relationship('TeacherSubjects', back_populates='subject')
     exams_associated = relationship('Exams', back_populates='subject')
+    grades = db.relationship('Grades', back_populates='subject')
 
     def __repr__(self):
         return f"Subject(subject_id={self.subject_id}, subject_name={self.subject_name})"
